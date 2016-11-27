@@ -1656,19 +1656,17 @@ int pgp_send_menu(HEADER *msg)
                mime_inline);
       prompt = promptbuf;
       /* L10N: PGP options (inline) (opportunistic encryption is on)
-         The 'i' is from the "PGP/M(i)ME" or "(i)nline", above.
-         The 'f' is undocumented. Please DO NOT translate it. */
-      letters = _("safcoi");
-      choices = "SaFCoi";
+         The 'i' is from the "PGP/M(i)ME" or "(i)nline", above. */
+      letters = _("saico");
+      choices =   "SaiCo";
     }
     else
     {
       /* L10N: PGP options (opportunistic encryption is on) */
       prompt = _("PGP (s)ign, sign (a)s, (c)lear, or (o)ppenc mode off? ");
-      /* L10N: PGP options (opportunistic encryption is on)
-         The 'f' is undocumented. Please DO NOT translate it. */
-      letters = _("safco");
-      choices = "SaFCo";
+      /* L10N: PGP options (opportunistic encryption is on) */
+      letters = _("saco");
+      choices =   "SaCo";
     }
   }
   /*
@@ -1689,20 +1687,18 @@ int pgp_send_menu(HEADER *msg)
                mime_inline);
       prompt = promptbuf;
       /* L10N: PGP options (inline) (opportunistic encryption is off)
-         The 'i' is from the "PGP/M(i)ME" or "(i)nline", above.
-         The 'f' is undocumented. Please DO NOT translate it. */
-      letters = _("esabfcoi");
-      choices = "esabfcOi";
+         The 'i' is from the "PGP/M(i)ME" or "(i)nline", above. */
+      letters = _("esabico");
+      choices =   "esabicO";
     }
     else
     {
       /* L10N: PGP options (opportunistic encryption is off) */
       prompt = _("PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, (c)lear, or "
                  "(o)ppenc mode? ");
-      /* L10N: PGP options (opportunistic encryption is off)
-         The 'f' is undocumented. Please DO NOT translate it. */
-      letters = _("esabfco");
-      choices = "esabfcO";
+      /* L10N: PGP options (opportunistic encryption is off) */
+      letters = _("esabco");
+      choices =   "esabcO";
     }
   }
   /*
@@ -1719,19 +1715,17 @@ int pgp_send_menu(HEADER *msg)
                mime_inline);
       prompt = promptbuf;
       /* L10N: PGP options (inline)
-         The 'i' is from the "PGP/M(i)ME" or "(i)nline", above.
-         The 'f' is undocumented. Please DO NOT translate it. */
-      letters = _("esabfci");
-      choices = "esabfci";
+         The 'i' is from the "PGP/M(i)ME" or "(i)nline", above. */
+      letters = _("esabic");
+      choices =   "esabic";
     }
     else
     {
       /* L10N: PGP options */
       prompt = _("PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, or (c)lear? ");
-      /* L10N: PGP options
-         The 'f' is undocumented. Please DO NOT translate it. */
-      letters = _("esabfc");
-      choices = "esabfc";
+      /* L10N: PGP options */
+      letters = _("esabc");
+      choices =   "esabc";
     }
   }
 
@@ -1773,13 +1767,11 @@ int pgp_send_menu(HEADER *msg)
         msg->security |= (ENCRYPT | SIGN);
         break;
 
-      case 'f': /* (f)orget it: kept for backward compatibility. */
       case 'c': /* (c)lear     */
         msg->security &= ~(ENCRYPT | SIGN);
         break;
 
-      case 'F': /* (f)orget it or (c)lear in oppenc mode */
-      case 'C':
+      case 'C': /* (c)lear in oppenc mode */
         msg->security &= ~SIGN;
         break;
 

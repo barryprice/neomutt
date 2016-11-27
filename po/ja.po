@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: neomutt-20161104\n"
 "Report-Msgid-Bugs-To: neomutt-devel@neomutt.org\n"
-"POT-Creation-Date: 2017-04-21 13:02+0100\n"
+"POT-Creation-Date: 2017-04-27 16:07+0100\n"
 "PO-Revision-Date: 2017-02-23 20:20+0900\n"
 "Last-Translator: TAKAHASHI Tamotsu <ttakah@lapis.plala.or.jp>\n"
 "Language-Team: mutt-j <mutt-j-users@lists.osdn.me>\n"
@@ -49,7 +49,7 @@ msgid "Select"
 msgstr "選択"
 
 #: addrbook.c:33 browser.c:52 browser.c:64 compose.c:105 compose.c:117
-#: crypt_gpgme.c:3943 curs_main.c:781 curs_main.c:794 mutt_ssl.c:837
+#: crypt_gpgme.c:3939 curs_main.c:781 curs_main.c:794 mutt_ssl.c:837
 #: mutt_ssl_gnutls.c:714 pager.c:2022 pgpkey.c:500 postpone.c:39 query.c:49
 #: recvattach.c:51 smime.c:412
 msgid "Help"
@@ -1047,7 +1047,7 @@ msgstr "CMS プロトコル起動エラー: %s\n"
 msgid "error creating gpgme data object: %s\n"
 msgstr "gpgme データオブジェクト作成エラー: %s\n"
 
-#: crypt_gpgme.c:478 crypt_gpgme.c:496 crypt_gpgme.c:1526 crypt_gpgme.c:2235
+#: crypt_gpgme.c:478 crypt_gpgme.c:496 crypt_gpgme.c:1522 crypt_gpgme.c:2231
 #, c-format
 msgid "error allocating data object: %s\n"
 msgstr "データオブジェクト割り当てエラー: %s\n"
@@ -1066,7 +1066,7 @@ msgstr ""
 msgid "error reading data object: %s\n"
 msgstr "データオブジェクト読み出しエラー: %s\n"
 
-#: crypt_gpgme.c:561 crypt_gpgme.c:3589 pgpkey.c:537 pgpkey.c:711
+#: crypt_gpgme.c:561 crypt_gpgme.c:3585 pgpkey.c:537 pgpkey.c:711
 msgid "Can't create temporary file"
 msgstr "一時ファイルを作成できない"
 
@@ -1145,11 +1145,11 @@ msgstr "ポリシーの条件が満たされなかった\n"
 msgid "A system error occurred"
 msgstr "システムエラーが発生"
 
-#: crypt_gpgme.c:1223
+#: crypt_gpgme.c:1221
 msgid "WARNING: PKA entry does not match signer's address: "
 msgstr "警告: PKA エントリが署名者アドレスと一致しない: "
 
-#: crypt_gpgme.c:1231
+#: crypt_gpgme.c:1229
 msgid "PKA verified signer's address is: "
 msgstr "PKA で検証された署名者アドレス: "
 
@@ -1157,81 +1157,81 @@ msgstr "PKA で検証された署名者アドレス: "
 #. Fill dots to make the DOTFILL entries the same length.
 #. In English, msgid "Fingerprint: " is the longest entry for this menu.
 #. Your language may vary.
-#: crypt_gpgme.c:1248 crypt_gpgme.c:3431
+#: crypt_gpgme.c:1244 crypt_gpgme.c:3427
 msgid "Fingerprint: "
 msgstr "フィンガープリント: "
 
-#: crypt_gpgme.c:1309
+#: crypt_gpgme.c:1305
 msgid ""
 "WARNING: We have NO indication whether the key belongs to the person named "
 "as shown above\n"
 msgstr "警告: この鍵が上記の人物のものかどうかを示す証拠は一切ない\n"
 
-#: crypt_gpgme.c:1316
+#: crypt_gpgme.c:1312
 msgid "WARNING: The key does NOT BELONG to the person named as shown above\n"
 msgstr "警告: この鍵は上記の人物のものではない!\n"
 
-#: crypt_gpgme.c:1320
+#: crypt_gpgme.c:1316
 msgid ""
 "WARNING: It is NOT certain that the key belongs to the person named as shown "
 "above\n"
 msgstr "警告: この鍵が確実に上記の人物のものだとは言えない\n"
 
-#: crypt_gpgme.c:1350 crypt_gpgme.c:1355
+#: crypt_gpgme.c:1346 crypt_gpgme.c:1351
 msgid "aka: "
 msgstr "別名: "
 
-#: crypt_gpgme.c:1365
+#: crypt_gpgme.c:1361
 msgid "KeyID "
 msgstr "鍵ID "
 
-#: crypt_gpgme.c:1374 crypt_gpgme.c:1379
+#: crypt_gpgme.c:1370 crypt_gpgme.c:1375
 msgid "created: "
 msgstr "作成日時: "
 
-#: crypt_gpgme.c:1451
+#: crypt_gpgme.c:1447
 #, c-format
 msgid "Error getting key information for KeyID %s: %s\n"
 msgstr "鍵ID %s の鍵情報の取得エラー: %s\n"
 
-#: crypt_gpgme.c:1458 crypt_gpgme.c:1473
+#: crypt_gpgme.c:1454 crypt_gpgme.c:1469
 msgid "Good signature from:"
 msgstr "正しい署名:"
 
-#: crypt_gpgme.c:1465
+#: crypt_gpgme.c:1461
 msgid "*BAD* signature from:"
 msgstr "**不正な** 署名:"
 
-#: crypt_gpgme.c:1481
+#: crypt_gpgme.c:1477
 msgid "Problem signature from:"
 msgstr "問題のある署名:"
 
 #. L10N:
 #. This is trying to match the width of the
 #. "Problem signature from:" translation just above.
-#: crypt_gpgme.c:1488
+#: crypt_gpgme.c:1484
 msgid "               expires: "
 msgstr "　　　　　期限: "
 
-#: crypt_gpgme.c:1534 crypt_gpgme.c:1751 crypt_gpgme.c:2451
+#: crypt_gpgme.c:1530 crypt_gpgme.c:1747 crypt_gpgme.c:2447
 msgid "[-- Begin signature information --]\n"
 msgstr "[-- 署名情報開始 --]\n"
 
-#: crypt_gpgme.c:1545
+#: crypt_gpgme.c:1541
 #, c-format
 msgid "Error: verification failed: %s\n"
 msgstr "エラー: 検証に失敗した: %s\n"
 
-#: crypt_gpgme.c:1597
+#: crypt_gpgme.c:1593
 #, c-format
 msgid "*** Begin Notation (signature by: %s) ***\n"
 msgstr "*** 註釈開始 (%s の署名に関して) ***\n"
 
-#: crypt_gpgme.c:1616
+#: crypt_gpgme.c:1612
 msgid "*** End Notation ***\n"
 msgstr "*** 註釈終了 ***\n"
 
-#: crypt_gpgme.c:1624 crypt_gpgme.c:1765 crypt_gpgme.c:2463
+#: crypt_gpgme.c:1620 crypt_gpgme.c:1761 crypt_gpgme.c:2459
 msgid ""
 "[-- End signature information --]\n"
 "\n"
@@ -1239,7 +1239,7 @@ msgstr ""
 "[-- 署名情報終了 --]\n"
 "\n"
 
-#: crypt_gpgme.c:1720
+#: crypt_gpgme.c:1716
 #, c-format
 msgid ""
 "[-- Error: decryption failed: %s --]\n"
@@ -1248,20 +1248,20 @@ msgstr ""
 "[-- エラー: 復号化に失敗した: %s --]\n"
 "\n"
 
-#: crypt_gpgme.c:2242
+#: crypt_gpgme.c:2238
 msgid "Error extracting key data!\n"
 msgstr "鍵データの抽出エラー!\n"
 
-#: crypt_gpgme.c:2428
+#: crypt_gpgme.c:2424
 #, c-format
 msgid "Error: decryption/verification failed: %s\n"
 msgstr "エラー: 復号化/検証が失敗した: %s\n"
 
-#: crypt_gpgme.c:2472
+#: crypt_gpgme.c:2468
 msgid "Error: copy data failed\n"
 msgstr "エラー: データのコピーに失敗した\n"
 
-#: crypt_gpgme.c:2493 pgp.c:504
+#: crypt_gpgme.c:2489 pgp.c:504
 msgid ""
 "[-- BEGIN PGP MESSAGE --]\n"
 "\n"
@@ -1269,11 +1269,11 @@ msgstr ""
 "[-- PGP メッセージ開始 --]\n"
 "\n"
 
-#: crypt_gpgme.c:2495 pgp.c:506
+#: crypt_gpgme.c:2491 pgp.c:506
 msgid "[-- BEGIN PGP PUBLIC KEY BLOCK --]\n"
 msgstr "[-- PGP 公開鍵ブロック開始 --]\n"
 
-#: crypt_gpgme.c:2497 pgp.c:508
+#: crypt_gpgme.c:2493 pgp.c:508
 msgid ""
 "[-- BEGIN PGP SIGNED MESSAGE --]\n"
 "\n"
@@ -1281,19 +1281,19 @@ msgstr ""
 "[-- PGP 署名メッセージ開始 --]\n"
 "\n"
 
-#: crypt_gpgme.c:2523 pgp.c:551
+#: crypt_gpgme.c:2519 pgp.c:551
 msgid "[-- END PGP MESSAGE --]\n"
 msgstr "[-- PGPメッセージ終了 --]\n"
 
-#: crypt_gpgme.c:2525 pgp.c:558
+#: crypt_gpgme.c:2521 pgp.c:558
 msgid "[-- END PGP PUBLIC KEY BLOCK --]\n"
 msgstr "[-- PGP 公開鍵ブロック終了 --]\n"
 
-#: crypt_gpgme.c:2527 pgp.c:560
+#: crypt_gpgme.c:2523 pgp.c:560
 msgid "[-- END PGP SIGNED MESSAGE --]\n"
 msgstr "[-- PGP 署名メッセージ終了 --]\n"
 
-#: crypt_gpgme.c:2550 pgp.c:594
+#: crypt_gpgme.c:2546 pgp.c:594
 msgid ""
 "[-- Error: could not find beginning of PGP message! --]\n"
 "\n"
@@ -1301,11 +1301,11 @@ msgstr ""
 "[-- エラー: PGP メッセージの開始点を発見できなかった! --]\n"
 "\n"
 
-#: crypt_gpgme.c:2582 crypt_gpgme.c:2657 pgp.c:1013
+#: crypt_gpgme.c:2578 crypt_gpgme.c:2653 pgp.c:1013
 msgid "[-- Error: could not create temporary file! --]\n"
 msgstr "[-- エラー: 一時ファイルを作成できなかった! --]\n"
 
-#: crypt_gpgme.c:2595
+#: crypt_gpgme.c:2591
 msgid ""
 "[-- The following data is PGP/MIME signed and encrypted --]\n"
 "\n"
@@ -1313,7 +1313,7 @@ msgstr ""
 "[-- 以下のデータは PGP/MIME で署名および暗号化されている --]\n"
 "\n"
 
-#: crypt_gpgme.c:2597 pgp.c:1024
+#: crypt_gpgme.c:2593 pgp.c:1024
 msgid ""
 "[-- The following data is PGP/MIME encrypted --]\n"
 "\n"
@@ -1321,23 +1321,23 @@ msgstr ""
 "[-- 以下のデータは PGP/MIME で暗号化されている --]\n"
 "\n"
 
-#: crypt_gpgme.c:2619
+#: crypt_gpgme.c:2615
 msgid "[-- End of PGP/MIME signed and encrypted data --]\n"
 msgstr "[-- PGP/MIME 署名および暗号化データ終了 --]\n"
 
-#: crypt_gpgme.c:2620 pgp.c:1044
+#: crypt_gpgme.c:2616 pgp.c:1044
 msgid "[-- End of PGP/MIME encrypted data --]\n"
 msgstr "[-- PGP/MIME 暗号化データ終了 --]\n"
 
-#: crypt_gpgme.c:2625 pgp.c:555 pgp.c:1049
+#: crypt_gpgme.c:2621 pgp.c:555 pgp.c:1049
 msgid "PGP message successfully decrypted."
 msgstr "PGP メッセージの復号化に成功した。"
 
-#: crypt_gpgme.c:2629 pgp.c:490 pgp.c:553 pgp.c:1053
+#: crypt_gpgme.c:2625 pgp.c:490 pgp.c:553 pgp.c:1053
 msgid "Could not decrypt PGP message"
 msgstr "PGP メッセージを復号化できなかった"
 
-#: crypt_gpgme.c:2670
+#: crypt_gpgme.c:2666
 msgid ""
 "[-- The following data is S/MIME signed --]\n"
 "\n"
@@ -1345,7 +1345,7 @@ msgstr ""
 "[-- 以下のデータは S/MIME で署名されている --]\n"
 "\n"
 
-#: crypt_gpgme.c:2671
+#: crypt_gpgme.c:2667
 msgid ""
 "[-- The following data is S/MIME encrypted --]\n"
 "\n"
@@ -1353,175 +1353,175 @@ msgstr ""
 "[-- 以下のデータは S/MIME で暗号化されている --]\n"
 "\n"
 
-#: crypt_gpgme.c:2700
+#: crypt_gpgme.c:2696
 msgid "[-- End of S/MIME signed data --]\n"
 msgstr "[-- S/MIME 署名データ終了 --]\n"
 
-#: crypt_gpgme.c:2701
+#: crypt_gpgme.c:2697
 msgid "[-- End of S/MIME encrypted data --]\n"
 msgstr "[-- S/MIME 暗号化データ終了 --]\n"
 
-#: crypt_gpgme.c:3268
+#: crypt_gpgme.c:3264
 msgid "[Can't display this user ID (unknown encoding)]"
 msgstr "[このユーザ ID は表示できない (文字コードが不明)]"
 
-#: crypt_gpgme.c:3270
+#: crypt_gpgme.c:3266
 msgid "[Can't display this user ID (invalid encoding)]"
 msgstr "[このユーザ ID は表示できない (文字コードが不正)]"
 
-#: crypt_gpgme.c:3275
+#: crypt_gpgme.c:3271
 msgid "[Can't display this user ID (invalid DN)]"
 msgstr "[このユーザ ID は表示できない (DN が不正)]"
 
 # "シリアル番号" == 全角 6 文字
 # "フィンガープリント" == 全角 9 文字
 #. L10N: DOTFILL
-#: crypt_gpgme.c:3349
+#: crypt_gpgme.c:3345
 msgid " aka ......: "
 msgstr " 別名 ............: "
 
-#: crypt_gpgme.c:3349
+#: crypt_gpgme.c:3345
 msgid "Name ......: "
 msgstr "名前 .............: "
 
-#: crypt_gpgme.c:3352 crypt_gpgme.c:3501
+#: crypt_gpgme.c:3348 crypt_gpgme.c:3497
 msgid "[Invalid]"
 msgstr "[不正]"
 
 #. L10N: DOTFILL
-#: crypt_gpgme.c:3373 crypt_gpgme.c:3526
+#: crypt_gpgme.c:3369 crypt_gpgme.c:3522
 #, c-format
 msgid "Valid From : %s\n"
 msgstr "発効期日 .........: %s\n"
 
 #. L10N: DOTFILL
-#: crypt_gpgme.c:3387 crypt_gpgme.c:3540
+#: crypt_gpgme.c:3383 crypt_gpgme.c:3536
 #, c-format
 msgid "Valid To ..: %s\n"
 msgstr "有効期限 .........: %s\n"
 
 #. L10N: DOTFILL
-#: crypt_gpgme.c:3401 crypt_gpgme.c:3548
+#: crypt_gpgme.c:3397 crypt_gpgme.c:3544
 #, c-format
 msgid "Key Type ..: %s, %lu bit %s\n"
 msgstr "鍵種別 ...........: %s, %lu ビット %s\n"
 
 #. L10N: DOTFILL
-#: crypt_gpgme.c:3404 crypt_gpgme.c:3551
+#: crypt_gpgme.c:3400 crypt_gpgme.c:3547
 #, c-format
 msgid "Key Usage .: "
 msgstr "鍵能力 ...........: "
 
-#: crypt_gpgme.c:3409 crypt_gpgme.c:3556
+#: crypt_gpgme.c:3405 crypt_gpgme.c:3552
 msgid "encryption"
 msgstr "暗号化"
 
-#: crypt_gpgme.c:3410 crypt_gpgme.c:3415 crypt_gpgme.c:3420 crypt_gpgme.c:3557
-#: crypt_gpgme.c:3562 crypt_gpgme.c:3567
+#: crypt_gpgme.c:3406 crypt_gpgme.c:3411 crypt_gpgme.c:3416 crypt_gpgme.c:3553
+#: crypt_gpgme.c:3558 crypt_gpgme.c:3563
 msgid ", "
 msgstr "、"
 
-#: crypt_gpgme.c:3414 crypt_gpgme.c:3561
+#: crypt_gpgme.c:3410 crypt_gpgme.c:3557
 msgid "signing"
 msgstr "署名"
 
-#: crypt_gpgme.c:3419 crypt_gpgme.c:3566
+#: crypt_gpgme.c:3415 crypt_gpgme.c:3562
 msgid "certification"
 msgstr "証明"
 
 #. L10N: DOTFILL
-#: crypt_gpgme.c:3464
+#: crypt_gpgme.c:3460
 #, c-format
 msgid "Serial-No .: 0x%s\n"
 msgstr "シリアル番号 .....: 0x%s\n"
 
 #. L10N: DOTFILL
-#: crypt_gpgme.c:3473
+#: crypt_gpgme.c:3469
 #, c-format
 msgid "Issued By .: "
 msgstr "発行者 ...........: "
 
 #. L10N: DOTFILL
-#: crypt_gpgme.c:3492
+#: crypt_gpgme.c:3488
 #, c-format
 msgid "Subkey ....: 0x%s"
 msgstr "副鍵 .............: 0x%s"
 
-#: crypt_gpgme.c:3496
+#: crypt_gpgme.c:3492
 msgid "[Revoked]"
 msgstr "[廃棄済み]"
 
-#: crypt_gpgme.c:3506
+#: crypt_gpgme.c:3502
 msgid "[Expired]"
 msgstr "[期限切れ]"
 
-#: crypt_gpgme.c:3511
+#: crypt_gpgme.c:3507
 msgid "[Disabled]"
 msgstr "[使用不可]"
 
-#: crypt_gpgme.c:3592
+#: crypt_gpgme.c:3588
 msgid "Collecting data..."
 msgstr "データ収集中..."
 
-#: crypt_gpgme.c:3617
+#: crypt_gpgme.c:3613
 #, c-format
 msgid "Error finding issuer key: %s\n"
 msgstr "発行者鍵の取得エラー: %s\n"
 
-#: crypt_gpgme.c:3626
+#: crypt_gpgme.c:3622
 msgid "Error: certification chain too long - stopping here\n"
 msgstr "エラー: 証明書の連鎖が長すぎる - ここでやめておく\n"
 
-#: crypt_gpgme.c:3636 pgpkey.c:559
+#: crypt_gpgme.c:3632 pgpkey.c:559
 #, c-format
 msgid "Key ID: 0x%s"
 msgstr "鍵 ID: 0x%s"
 
-#: crypt_gpgme.c:3719
+#: crypt_gpgme.c:3715
 #, c-format
 msgid "gpgme_new failed: %s"
 msgstr "gpgme_new 失敗: %s"
 
-#: crypt_gpgme.c:3758 crypt_gpgme.c:3809
+#: crypt_gpgme.c:3754 crypt_gpgme.c:3805
 #, c-format
 msgid "gpgme_op_keylist_start failed: %s"
 msgstr "gpgme_op_keylist_start 失敗: %s"
 
-#: crypt_gpgme.c:3797 crypt_gpgme.c:3839
+#: crypt_gpgme.c:3793 crypt_gpgme.c:3835
 #, c-format
 msgid "gpgme_op_keylist_next failed: %s"
 msgstr "gpgme_op_keylist_next 失敗: %s"
 
-#: crypt_gpgme.c:3908
+#: crypt_gpgme.c:3904
 msgid "All matching keys are marked expired/revoked."
 msgstr "一致した鍵はすべて期限切れか廃棄済み。"
 
-#: crypt_gpgme.c:3937 mutt_ssl.c:835 mutt_ssl_gnutls.c:712 pgpkey.c:494
+#: crypt_gpgme.c:3933 mutt_ssl.c:835 mutt_ssl_gnutls.c:712 pgpkey.c:494
 #: smime.c:408
 msgid "Exit  "
 msgstr "終了  "
 
-#: crypt_gpgme.c:3939 pgpkey.c:496 smime.c:410
+#: crypt_gpgme.c:3935 pgpkey.c:496 smime.c:410
 msgid "Select  "
 msgstr "選択  "
 
-#: crypt_gpgme.c:3941 pgpkey.c:498
+#: crypt_gpgme.c:3937 pgpkey.c:498
 msgid "Check key  "
 msgstr "鍵検査  "
 
-#: crypt_gpgme.c:3957
+#: crypt_gpgme.c:3953
 msgid "PGP and S/MIME keys matching"
 msgstr "一致する PGP および S/MIME 鍵"
 
-#: crypt_gpgme.c:3959
+#: crypt_gpgme.c:3955
 msgid "PGP keys matching"
 msgstr "一致する PGP 鍵"
 
-#: crypt_gpgme.c:3961
+#: crypt_gpgme.c:3957
 msgid "S/MIME keys matching"
 msgstr "一致する S/MIME 鍵"
 
-#: crypt_gpgme.c:3963
+#: crypt_gpgme.c:3959
 msgid "keys matching"
 msgstr "一致する鍵"
 
@@ -1530,63 +1530,63 @@ msgstr "一致する鍵"
 #. %1$s is one of the previous four entries.
 #. %2$s is an address.
 #. e.g. "S/MIME keys matching <me@mutt.org>."
-#: crypt_gpgme.c:3970
+#: crypt_gpgme.c:3966
 #, c-format
 msgid "%s <%s>."
 msgstr "<%2$s> に%1$s。"
 
 #. L10N:
 #. e.g. 'S/MIME keys matching "Michael Elkins".'
-#: crypt_gpgme.c:3974
+#: crypt_gpgme.c:3970
 #, c-format
 msgid "%s \"%s\"."
 msgstr "「%2$s」に%1$s。"
 
-#: crypt_gpgme.c:4001 pgpkey.c:579
+#: crypt_gpgme.c:3997 pgpkey.c:579
 msgid "This key can't be used: expired/disabled/revoked."
 msgstr "この鍵は期限切れか使用不可か廃棄済みのため、使えない。"
 
-#: crypt_gpgme.c:4014 pgpkey.c:590 smime.c:440
+#: crypt_gpgme.c:4010 pgpkey.c:590 smime.c:440
 msgid "ID is expired/disabled/revoked."
 msgstr "ID は期限切れか使用不可か廃棄済み。"
 
-#: crypt_gpgme.c:4022 pgpkey.c:595 smime.c:443
+#: crypt_gpgme.c:4018 pgpkey.c:595 smime.c:443
 msgid "ID has undefined validity."
 msgstr "ID は信用度が未定義。"
 
-#: crypt_gpgme.c:4025 pgpkey.c:598
+#: crypt_gpgme.c:4021 pgpkey.c:598
 msgid "ID is not valid."
 msgstr "ID は信用されていない。"
 
-#: crypt_gpgme.c:4028 pgpkey.c:601
+#: crypt_gpgme.c:4024 pgpkey.c:601
 msgid "ID is only marginally valid."
 msgstr "ID はかろうじて信用されている。"
 
-#: crypt_gpgme.c:4037 smime.c:450
+#: crypt_gpgme.c:4033 smime.c:450
 #, c-format
 msgid "%s Do you really want to use the key?"
 msgstr "%s 本当にこの鍵を使用?"
 
-#: crypt_gpgme.c:4095 crypt_gpgme.c:4224 pgpkey.c:806 pgpkey.c:929
+#: crypt_gpgme.c:4091 crypt_gpgme.c:4220 pgpkey.c:806 pgpkey.c:929
 #, c-format
 msgid "Looking for keys matching \"%s\"..."
 msgstr "\"%s\" に一致する鍵を検索中..."
 
-#: crypt_gpgme.c:4375 pgp.c:1227
+#: crypt_gpgme.c:4371 pgp.c:1227
 #, c-format
 msgid "Use keyID = \"%s\" for %s?"
 msgstr "鍵 ID = \"%s\" を %s に使う?"
 
-#: crypt_gpgme.c:4426 pgp.c:1276 smime.c:765 smime.c:865
+#: crypt_gpgme.c:4422 pgp.c:1276 smime.c:765 smime.c:865
 #, c-format
 msgid "Enter keyID for %s: "
 msgstr "%s の鍵 ID 入力: "
 
-#: crypt_gpgme.c:4488 pgpkey.c:695
+#: crypt_gpgme.c:4483 pgpkey.c:695
 msgid "Please enter the key ID: "
 msgstr "鍵 ID を入力: "
 
-#: crypt_gpgme.c:4500
+#: crypt_gpgme.c:4495
 #, c-format
 msgid "Error exporting key: %s\n"
 msgstr "鍵の抽出エラー: %s\n"
@@ -1596,42 +1596,40 @@ msgstr "鍵の抽出エラー: %s\n"
 #. MIME description for exported (attached) keys.
 #. You can translate this entry to a non-ASCII string (it will be encoded),
 #. but it may be safer to keep it untranslated.
-#: crypt_gpgme.c:4520
+#: crypt_gpgme.c:4515
 #, c-format
 msgid "PGP Key 0x%s."
 msgstr "PGP Key 0x%s."
 
-#: crypt_gpgme.c:4563
+#: crypt_gpgme.c:4557
 msgid "GPGME: OpenPGP protocol not available"
 msgstr "GPGME: OpenPGP プロトコルが利用できない"
 
-#: crypt_gpgme.c:4571
+#: crypt_gpgme.c:4565
 msgid "GPGME: CMS protocol not available"
 msgstr "GPGME: CMS プロトコルが利用できない"
 
-#: crypt_gpgme.c:4610
+#: crypt_gpgme.c:4604
 msgid "S/MIME (s)ign, sign (a)s, (p)gp, (c)lear, or (o)ppenc mode off? "
 msgstr "S/MIME s:署名, a:署名鍵選択, p:PGP, c:なし, o:日和見暗号オフ "
 
 #. L10N: S/MIME options (opportunistic encryption is on)
-#. The 'f' is undocumented. Please DO NOT translate it.
-#: crypt_gpgme.c:4613
-msgid "sapfco"
-msgstr "sapfco"
+#: crypt_gpgme.c:4606
+msgid "sapco"
+msgstr "sapco"
 
-#: crypt_gpgme.c:4620
+#: crypt_gpgme.c:4613
 msgid "PGP (s)ign, sign (a)s, s/(m)ime, (c)lear, or (o)ppenc mode off? "
 msgstr "PGP s:署名, a:署名鍵選択, m:S/MIME, c:なし, o:日和見暗号オフ "
 
 #. L10N: PGP options (opportunistic encryption is on)
-#. The 'f' is undocumented. Please DO NOT translate it.
-#: crypt_gpgme.c:4623
-msgid "samfco"
-msgstr "samfco"
+#: crypt_gpgme.c:4615
+msgid "samco"
+msgstr "samco"
 
 # 80-columns 幅にギリギリおさまるか？
 #. L10N: S/MIME options (opportunistic encryption is off)
-#: crypt_gpgme.c:4636
+#: crypt_gpgme.c:4628
 msgid ""
 "S/MIME (e)ncrypt, (s)ign, sign (a)s, (b)oth, (p)gp, (c)lear, or (o)ppenc "
 "mode? "
@@ -1640,13 +1638,12 @@ msgstr ""
 "号 "
 
 #. L10N: S/MIME options (opportunistic encryption is off)
-#. The 'f' is undocumented. Please DO NOT translate it.
-#: crypt_gpgme.c:4640
-msgid "esabpfco"
-msgstr "esabpfco"
+#: crypt_gpgme.c:4631
+msgid "esabpco"
+msgstr "esabpco"
 
 #. L10N: PGP options (opportunistic encryption is off)
-#: crypt_gpgme.c:4646
+#: crypt_gpgme.c:4637
 msgid ""
 "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, s/(m)ime, (c)lear, or (o)ppenc "
 "mode? "
@@ -1655,40 +1652,37 @@ msgstr ""
 "号 "
 
 #. L10N: PGP options (opportunistic encryption is off)
-#. The 'f' is undocumented. Please DO NOT translate it.
-#: crypt_gpgme.c:4650
-msgid "esabmfco"
-msgstr "esabmfco"
+#: crypt_gpgme.c:4640
+msgid "esabmco"
+msgstr "esabmco"
 
-#: crypt_gpgme.c:4663
+#: crypt_gpgme.c:4653
 msgid "S/MIME (e)ncrypt, (s)ign, sign (a)s, (b)oth, (p)gp or (c)lear? "
 msgstr "S/MIME e:暗号化, s:署名, a:署名鍵選択, b:暗号+署名, p:PGP, c:なし "
 
 #. L10N: S/MIME options
-#. The 'f' is undocumented. Please DO NOT translate it.
-#: crypt_gpgme.c:4666
-msgid "esabpfc"
-msgstr "esabpfc"
+#: crypt_gpgme.c:4655
+msgid "esabpc"
+msgstr "esabpc"
 
-#: crypt_gpgme.c:4673
+#: crypt_gpgme.c:4662
 msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, s/(m)ime or (c)lear? "
 msgstr "PGP e:暗号化, s:署名, a:署名鍵選択, b:暗号+署名, m:S/MIME, c:なし "
 
 #. L10N: PGP options
-#. The 'f' is undocumented. Please DO NOT translate it.
-#: crypt_gpgme.c:4676
-msgid "esabmfc"
-msgstr "esabmfc"
+#: crypt_gpgme.c:4664
+msgid "esabmc"
+msgstr "esabmc"
 
-#: crypt_gpgme.c:4701 pgp.c:1760 smime.c:2143 smime.c:2158
+#: crypt_gpgme.c:4689 pgp.c:1754 smime.c:2140 smime.c:2155
 msgid "Sign as: "
 msgstr "署名に使う鍵: "
 
-#: crypt_gpgme.c:4830
+#: crypt_gpgme.c:4816
 msgid "Failed to verify sender"
 msgstr "送信者の検証に失敗した"
 
-#: crypt_gpgme.c:4833
+#: crypt_gpgme.c:4819
 msgid "Failed to figure out sender"
 msgstr "送信者の識別に失敗した"
 
@@ -5187,24 +5181,22 @@ msgstr "PGP s:署名, a:署名鍵選択, %s形式, c:なし, o:日和見暗号�
 
 #. L10N: PGP options (inline) (opportunistic encryption is on)
 #. The 'i' is from the "PGP/M(i)ME" or "(i)nline", above.
-#. The 'f' is undocumented. Please DO NOT translate it.
-#: pgp.c:1661
-msgid "safcoi"
-msgstr "safcoi"
+#: pgp.c:1660
+msgid "saico"
+msgstr "saico"
 
 #. L10N: PGP options (opportunistic encryption is on)
-#: pgp.c:1667
+#: pgp.c:1666
 msgid "PGP (s)ign, sign (a)s, (c)lear, or (o)ppenc mode off? "
 msgstr "PGP s:署名, a:署名鍵選択, c:なし, o:日和見暗号オフ "
 
 #. L10N: PGP options (opportunistic encryption is on)
-#. The 'f' is undocumented. Please DO NOT translate it.
-#: pgp.c:1670
-msgid "safco"
-msgstr "safco"
+#: pgp.c:1668
+msgid "saco"
+msgstr "saco"
 
 #. L10N: PGP options (inline) (opportunistic encryption is off)
-#: pgp.c:1687
+#: pgp.c:1685
 #, c-format
 msgid ""
 "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, %s format, (c)lear, or (o)ppenc "
@@ -5215,45 +5207,41 @@ msgstr ""
 
 #. L10N: PGP options (inline) (opportunistic encryption is off)
 #. The 'i' is from the "PGP/M(i)ME" or "(i)nline", above.
-#. The 'f' is undocumented. Please DO NOT translate it.
-#: pgp.c:1694
-msgid "esabfcoi"
-msgstr "esabfcoi"
+#: pgp.c:1691
+msgid "esabico"
+msgstr "esabico"
 
 #. L10N: PGP options (opportunistic encryption is off)
-#: pgp.c:1700
+#: pgp.c:1697
 msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, (c)lear, or (o)ppenc mode? "
 msgstr "PGP e:暗号化, s:署名, a:署名鍵選択, b:暗号+署名, c:なし, o:日和見暗号 "
 
 #. L10N: PGP options (opportunistic encryption is off)
-#. The 'f' is undocumented. Please DO NOT translate it.
-#: pgp.c:1704
-msgid "esabfco"
-msgstr "esabfco"
+#: pgp.c:1700
+msgid "esabco"
+msgstr "esabco"
 
 #. L10N: PGP options (inline)
-#: pgp.c:1717
+#: pgp.c:1713
 #, c-format
 msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, %s format, or (c)lear? "
 msgstr "PGP e:暗号化, s:署名, a:署名鍵選択, b:暗号+署名, %s形式, c:なし "
 
 #. L10N: PGP options (inline)
 #. The 'i' is from the "PGP/M(i)ME" or "(i)nline", above.
-#. The 'f' is undocumented. Please DO NOT translate it.
-#: pgp.c:1724
-msgid "esabfci"
-msgstr "esabfci"
+#: pgp.c:1719
+msgid "esabic"
+msgstr "esabic"
 
 #. L10N: PGP options
-#: pgp.c:1730
+#: pgp.c:1725
 msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, or (c)lear? "
 msgstr "PGP e:暗号化, s:署名, a:署名鍵選択, b:暗号+署名, c:なし "
 
 #. L10N: PGP options
-#. The 'f' is undocumented. Please DO NOT translate it.
-#: pgp.c:1733
-msgid "esabfc"
-msgstr "esabfc"
+#: pgp.c:1727
+msgid "esabc"
+msgstr "esabc"
 
 #: pgpinvoke.c:288
 msgid "Fetching PGP key..."
@@ -5968,14 +5956,13 @@ msgid ""
 msgstr "S/MIME s:署名, w:暗号選択, a:署名鍵選択, c:なし, o:日和見暗号オフ "
 
 #. L10N: S/MIME options (opportunistic encryption is on)
-#. The 'f' is undocumented. Please DO NOT translate it.
-#: smime.c:2031
-msgid "swafco"
-msgstr "swafco"
+#: smime.c:2030
+msgid "swaco"
+msgstr "swaco"
 
 # 80-column 幅に入りきらないのでスペースなし
 #. L10N: S/MIME options (opportunistic encryption is off)
-#: smime.c:2041
+#: smime.c:2040
 msgid ""
 "S/MIME (e)ncrypt, (s)ign, encrypt (w)ith, sign (a)s, (b)oth, (c)lear, or "
 "(o)ppenc mode? "
@@ -5984,54 +5971,52 @@ msgstr ""
 "号 "
 
 #. L10N: S/MIME options (opportunistic encryption is off)
-#. The 'f' is undocumented. Please DO NOT translate it.
-#: smime.c:2045
-msgid "eswabfco"
-msgstr "eswabfco"
+#: smime.c:2043
+msgid "eswabco"
+msgstr "eswabco"
 
 #. L10N: S/MIME options
-#: smime.c:2054
+#: smime.c:2052
 msgid ""
 "S/MIME (e)ncrypt, (s)ign, encrypt (w)ith, sign (a)s, (b)oth, or (c)lear? "
 msgstr ""
 "S/MIME e:暗号化, s:署名, w:暗号選択, a:署名鍵選択, b:暗号+署名, c:なし "
 
 #. L10N: S/MIME options
-#. The 'f' is undocumented. Please DO NOT translate it.
-#: smime.c:2058
-msgid "eswabfc"
-msgstr "eswabfc"
+#: smime.c:2055
+msgid "eswabc"
+msgstr "eswabc"
 
-#: smime.c:2079
+#: smime.c:2076
 msgid "Choose algorithm family: 1: DES, 2: RC2, 3: AES, or (c)lear? "
 msgstr "アルゴリズムを選択: 1: DES系, 2: RC2系, 3: AES系, c:なし "
 
-#: smime.c:2082
+#: smime.c:2079
 msgid "drac"
 msgstr "drac"
 
-#: smime.c:2085
+#: smime.c:2082
 msgid "1: DES, 2: Triple-DES "
 msgstr "1: DES, 2: トリプルDES "
 
-#: smime.c:2085
+#: smime.c:2082
 msgid "dt"
 msgstr "dt"
 
-#: smime.c:2098
+#: smime.c:2095
 msgid "1: RC2-40, 2: RC2-64, 3: RC2-128 "
 msgstr "1: RC2-40, 2: RC2-64, 3: RC2-128 "
 
 # ちょっとどうかと思うが互換性のため残す
-#: smime.c:2098
+#: smime.c:2095
 msgid "468"
 msgstr "468"
 
-#: smime.c:2114
+#: smime.c:2111
 msgid "1: AES128, 2: AES192, 3: AES256 "
 msgstr "1: AES128, 2: AES192, 3: AES256 "
 
-#: smime.c:2114
+#: smime.c:2111
 msgid "895"
 msgstr "895"
 
