@@ -891,11 +891,6 @@ AC_ARG_ENABLE(nfs-fix, AS_HELP_STRING([--enable-nfs-fix],[Work around an NFS wit
 			incorrectly cache the attributes of small files.])
 	fi])
 
-AC_ARG_ENABLE(mailtool, AS_HELP_STRING([--enable-mailtool],[Enable Sun mailtool attachments support]),
-	[if test x$enableval = xyes; then
-		AC_DEFINE(SUN_ATTACHMENT,1,[ Define to enable Sun mailtool attachments support. ])
-	fi])
-
 AC_ARG_ENABLE(locales-fix, AS_HELP_STRING([--enable-locales-fix],[The result of isprint() is unreliable]),
 	[if test x$enableval = xyes; then
 		AC_DEFINE(LOCALES_HACK,1,[ Define if the result of isprint() is unreliable. ])

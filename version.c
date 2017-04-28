@@ -139,11 +139,6 @@ static struct compile_options comp_opts[] = {
 #else
     {"LOCALES_HACK", 0},
 #endif
-#ifdef SUN_ATTACHMENT
-    {"SUN_ATTACHMENT", 1},
-#else
-    {"SUN_ATTACHMENT", 0},
-#endif
 #ifdef HAVE_BKGDSET
     {"HAVE_BKGDSET", 1},
 #else
