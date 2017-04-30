@@ -456,7 +456,7 @@ AC_CHECK_HEADERS(unix.h)
 
 AC_CHECK_FUNCS(setrlimit getsid)
 AC_CHECK_FUNCS(fgets_unlocked fgetc_unlocked)
-AC_CHECK_FUNCS(strcasecmp strncasecmp setenv strdup strsep strtok_r mkdtemp)
+AC_CHECK_FUNCS(strcasecmp strncasecmp strdup strsep strtok_r mkdtemp)
 
 AC_MSG_CHECKING(for sig_atomic_t in signal.h)
 AC_EGREP_HEADER(sig_atomic_t,signal.h,
