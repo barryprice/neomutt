@@ -89,7 +89,7 @@ static const char *Notice =
 struct compile_options
 {
   const char *name;
-  int enabled;
+  bool enabled;
 };
 
 /* These are sorted by the display string */
@@ -342,9 +342,9 @@ static struct compile_options comp_opts[] = {
 static void print_compile_options(void)
 {
   int i;
-  char c;
   int len;
   int used = 2;
+  bool tty = stdout ? isatty(fileno(stdout)) : false;
 
   printf("  ");
   for (i = 0; comp_opts[i].name; i++)
@@ -356,8 +356,20 @@ static void print_compile_options(void)
       printf("\n  ");
     }
     used += len;
-    c = comp_opts[i].enabled ? '+' : '-';
-    printf("%c%s ", c, comp_opts[i].name);
+    if (comp_opts[i].enabled)
+    {
+      if (tty)
+        printf("\033[1;32m+%s\033[0m ", comp_opts[i].name);
+      else
+        printf("+%s ", comp_opts[i].name);
+    }
+    else
+    {
+      if (tty)
+        printf("\033[1;31m-%s\033[0m ", comp_opts[i].name);
+      else
+        printf("-%s ", comp_opts[i].name);
+    }
   }
   puts("");
 }
