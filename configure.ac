@@ -244,7 +244,6 @@ AC_DEFINE(USE_COMPRESSED, 1, [Define to enable compressed folders support.])
 AC_DEFINE(USE_IMAP, 1, [Define if you want support for the IMAP protocol.])
 need_imap="yes"
 need_socket="yes"
-need_md5="yes"
 AC_DEFINE(USE_SIDEBAR, 1, [Define if you want support for the sidebar.])
 
 dnl --enable-lua
@@ -578,7 +577,6 @@ AS_IF([test x$use_pop = "xyes"], [
 	MUTT_LIB_OBJECTS="$MUTT_LIB_OBJECTS pop.o pop_lib.o pop_auth.o"
 	need_pop="yes"
 	need_socket="yes"
-	need_md5="yes"
 ])
 
 AS_IF([test x$use_nntp = "xyes"], [
@@ -1026,17 +1024,13 @@ AM_CONDITIONAL(BUILD_HCACHE, test -n "$hcache_db_used")
 if test -n "$hcache_db_used"; then
 	AC_DEFINE(USE_HCACHE, 1, [Enable header caching])
 	MUTT_LIB_OBJECTS="$MUTT_LIB_OBJECTS hcache.o"
-	need_md5="yes"
 else
 	# For outputting in the summary
 	hcache_db_used="no"
 fi
 dnl -- end cache --
 
-if test "$need_md5" = "yes"; then
-	MUTT_LIB_OBJECTS="$MUTT_LIB_OBJECTS md5.o"
-	MUTT_MD5="mutt_md5$EXEEXT"
-fi
+MUTT_MD5="mutt_md5$EXEEXT"
 
 AC_SUBST(MUTT_MD5)
 AC_SUBST(MUTTLIBS)
