@@ -129,7 +129,6 @@ AS_IF([test x$enable_everything = "xyes"], [
 	use_pgp="yes"
 	use_smime="yes"
 	use_notmuch="yes"
-	use_smtp="yes"
 	use_lua="yes"
 	hcache_tokyocabinet="yes"
 	hcache_kyotocabinet="yes"
@@ -142,7 +141,6 @@ AS_IF([test x$enable_everything = "xyes"], [
 	use_pgp="no"
 	use_smime="no"
 	use_notmuch="no"
-	use_smtp="no"
 	use_lua="no"
 ])
 
@@ -185,10 +183,6 @@ AC_ARG_ENABLE(lua,
 AC_ARG_ENABLE(notmuch,
 	AC_HELP_STRING([--enable-notmuch], [Enable NOTMUCH support]),
 	[use_notmuch=$enableval])
-
-AC_ARG_ENABLE(smtp,
-	AS_HELP_STRING([--enable-smtp], [Include internal SMTP relay support]),
-	[use_smtp=$enableval])
 
 AC_ARG_WITH(mixmaster,
 	AS_HELP_STRING([--with-mixmaster@<:@=PATH@:>@], [Include Mixmaster support]),
@@ -233,6 +227,7 @@ AC_DEFINE(USE_IMAP, 1, [Define if you want support for the IMAP protocol.])
 AC_DEFINE(USE_NNTP, 1, [Define if you want support for the NNTP protocol.])
 AC_DEFINE(USE_POP, 1, [Define if you want support for the POP3 protocol.])
 AC_DEFINE(USE_SIDEBAR, 1, [Define if you want support for the sidebar.])
+AC_DEFINE(USE_SMTP, 1, [Include internal SMTP relay support])
 AC_DEFINE(USE_SOCKET,1,
 	[ Include code for socket support. Set automatically if you enable POP3 or IMAP ])
 
@@ -559,11 +554,6 @@ AC_CHECK_FUNC(gethostent, , AC_CHECK_LIB(nsl, gethostent))
 AC_CHECK_FUNC(setsockopt, , AC_CHECK_LIB(socket, setsockopt))
 AC_CHECK_FUNCS(getaddrinfo)
 AC_SEARCH_LIBS([getaddrinfo_a], [anl], [AC_DEFINE(HAVE_GETADDRINFO_A, 1, [Define to 1 if you have the `getaddrinfo_a' function.])])
-
-AS_IF([test x$use_smtp = "xyes"], [
-	AC_DEFINE(USE_SMTP, 1, [Include internal SMTP relay support])
-	MUTT_LIB_OBJECTS="$MUTT_LIB_OBJECTS smtp.o"
-])
 
 dnl -- end socket dependencies --
 
@@ -1122,6 +1112,4 @@ AC_MSG_NOTICE([Summary of build options:
   Notmuch:           $use_notmuch
   Header Cache(s):   $hcache_db_used
   Lua:               $use_lua
-
-  SMTP:              $use_smtp
 ])
