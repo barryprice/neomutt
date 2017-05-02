@@ -250,12 +250,9 @@ int main(int argc, char **argv, char **environ)
         argv[nargc++] = argv[optind];
     }
 
-#ifdef USE_NNTP
+    /* USE_NNTP 'g:G' */
     if ((i = getopt(argc, argv,
                     "+A:a:Bb:F:f:c:Dd:Ee:g:GH:s:i:hm:npQ:RSvxyzZ")) != EOF)
-#else
-    if ((i = getopt(argc, argv, "+A:a:Bb:F:f:c:Dd:Ee:H:s:i:hm:npQ:RSvxyzZ")) != EOF)
-#endif
       switch (i)
       {
         case 'A':
