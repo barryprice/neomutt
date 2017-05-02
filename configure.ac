@@ -9,7 +9,7 @@ LDFLAGS=$LDFLAGS
 
 AC_INIT([NeoMutt], [20170428], [neomutt-devel@neomutt.org], [mutt], [https://www.neomutt.org])
 AC_CONFIG_SRCDIR(mutt.h)
-AM_INIT_AUTOMAKE
+AM_INIT_AUTOMAKE([subdir-objects])
 AC_CONFIG_HEADERS([config.h])
 
 AC_DEFINE(MUTT_VERSION, "1.8.2", [Version of upstream Mutt])
@@ -629,6 +629,7 @@ if test "$gss_prefix" != "no"; then
 	fi
 	CPPFLAGS="$CPPFLAGS $GSSAPI_CFLAGS"
 	MUTTLIBS="$MUTTLIBS $GSSAPI_LIBS"
+	MUTT_LIB_OBJECTS="$MUTT_LIB_OBJECTS imap/auth_gss.o"
 	AC_DEFINE(USE_GSS,1,[ Define if you have GSSAPI libraries available ])
 	need_gss="yes"
 fi
@@ -724,15 +725,18 @@ AC_ARG_WITH(sasl, AS_HELP_STRING([--with-sasl@<:@=PFX@:>@],[Use SASL network sec
 			AC_MSG_ERROR([could not find sasl lib]),)
 
 		MUTTLIBS="$MUTTLIBS $LIBS"
-		MUTT_LIB_OBJECTS="$MUTT_LIB_OBJECTS mutt_sasl.o"
+		MUTT_LIB_OBJECTS="$MUTT_LIB_OBJECTS mutt_sasl.o imap/auth_sasl.o"
 		LIBS="$saved_LIBS"
 
 		AC_DEFINE(USE_SASL,1,
 			[ Define if want to use the SASL library for POP/IMAP authentication. ])
 		need_sasl=yes
-	fi
+    fi
 	])
 AM_CONDITIONAL(USE_SASL, test x$need_sasl = xyes)
+if test x$need_sasl = x; then
+	MUTT_LIB_OBJECTS="$MUTT_LIB_OBJECTS imap/auth_anon.o imap/auth_cram.o"
+fi
 
 dnl -- end socket --
 
@@ -1276,7 +1280,7 @@ if test x$full_doc != xno; then
 	AC_DEFINE(MAKEDOC_FULL,1, [Define if you want complete documentation.])
 fi
 
-AC_CONFIG_FILES(Makefile contrib/Makefile doc/Makefile imap/Makefile
+AC_CONFIG_FILES(Makefile contrib/Makefile doc/Makefile
 	m4/Makefile po/Makefile.in
 	hcachever.sh doc/instdoc.sh)
 AC_OUTPUT

@@ -10,7 +10,7 @@ AM_DISTCHECK_CONFIGURE_FLAGS = --enable-debug --enable-gpgme --enable-notmuch \
 	--with-bdb --with-gdbm --with-gnutls --with-gss --with-kyotocabinet \
 	--with-lmdb --with-qdbm --with-sasl --with-tokyocabinet
 
-SUBDIRS = m4 contrib imap
+SUBDIRS = m4 contrib
 
 if BUILD_DOC
 SUBDIRS += doc
@@ -44,23 +44,21 @@ mutt_SOURCES = account.c addrbook.c alias.c ascii.c attach.c base64.c bcache.c \
 	       pop.c pop_auth.c pop_lib.c postpone.c query.c recvattach.c \
 	       recvcmd.c rfc1524.c rfc2047.c rfc2231.c rfc3676.c rfc822.c \
 	       safe_asprintf.c score.c send.c sendlib.c sidebar.c signal.c \
-	       smtp.c sort.c status.c system.c thread.c url.c version.c
+	       smtp.c sort.c status.c system.c thread.c url.c version.c \
+	       imap/auth.c imap/auth_plain.c imap/auth_login.c imap/browse.c \
+	       imap/command.c imap/imap.c imap/message.c imap/utf7.c imap/util.c
 
 nodist_mutt_SOURCES = $(BUILT_SOURCES)
 
-LIBIMAP = -Limap -limap
-LIBIMAPDEPS = $(top_srcdir)/imap/imap.h imap/libimap.a
-
-mutt_LDADD = $(MUTT_LIB_OBJECTS) $(LIBOBJS) $(LIBIMAP) $(MUTTLIBS) \
+mutt_LDADD = $(MUTT_LIB_OBJECTS) $(LIBOBJS) $(MUTTLIBS) \
 	$(INTLLIBS) $(LIBICONV) $(GPGME_LIBS)
 
-mutt_DEPENDENCIES = $(MUTT_LIB_OBJECTS) $(LIBOBJS) $(LIBIMAPDEPS) \
-	$(INTLDEPS)
+mutt_DEPENDENCIES = $(MUTT_LIB_OBJECTS) $(LIBOBJS) $(INTLDEPS)
 
 DEFS=-DPKGDATADIR=\"$(pkgdatadir)\" -DSYSCONFDIR=\"$(sysconfdir)\" \
 	-DBINDIR=\"$(bindir)\" -DMUTTLOCALEDIR=\"$(datadir)/locale\"
 
-AM_CPPFLAGS=-I. -I$(top_srcdir) $(GPGME_CFLAGS)
+AM_CPPFLAGS=-I$(top_srcdir)/imap -I$(top_srcdir) $(GPGME_CFLAGS)
 
 EXTRA_mutt_SOURCES = browser.h crypt_gpgme.c crypt_mod_pgp_classic.c \
 		     crypt_mod_pgp_gpgme.c crypt_mod_smime_classic.c \
@@ -86,7 +84,9 @@ EXTRA_DIST = account.h ascii.h attach.h bcache.h browser.h buffer.h buffy.h \
 	     pgpewrap.c pgplib.h pgppacket.h pop.h protos.h README.md README.SSL \
 	     remailer.c remailer.h rfc1524.h rfc2047.h rfc2231.h rfc3676.h \
 	     rfc822.h sha1.h sidebar.h smime.h smime_keys.pl sort.h txt2c.c \
-	     txt2c.sh UPDATING version.h keymap_alldefs.h
+	     txt2c.sh UPDATING version.h keymap_alldefs.h imap/README \
+	     imap/imap.h imap/imap_private.h imap/auth.h imap/message.h \
+	     imap/auth_anon.c imap/auth_cram.c imap/auth_gss.c imap/auth_sasl.c
 
 EXTRA_SCRIPTS = smime_keys
 
